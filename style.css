@@ -1,0 +1,192 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+
+
+body{
+    background: #34495e;
+    color: white;
+}
+
+::-webkit-scrollbar{
+    height: 10px;
+    width: 10px;
+    background: #34495e;
+}
+::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+}
+
+
+#kanban-board{
+    display: grid;
+    overflow-x: scroll;
+    grid-template-columns: 400px 400px 400px 400px 400px;
+    grid-template-rows: 20px 70vh;
+    grid-gap: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px)
+{
+    #kanban-board{
+        grid-template-columns: 98vw 98vw 98vw 98vw 98vw; 
+        padding: 0px;
+    }
+}
+
+#kanban-board .col-header{
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+#kanban-board .workflow-column{
+    background: #aaa;
+    overflow-y: scroll;
+    padding: 5px;
+}
+
+#add-story-btn{
+    background: none;
+    color: white;
+    border: none;
+    float: left;
+    cursor: pointer;
+}
+
+.templates > *{
+    display: none;
+}
+
+
+.story{
+    background: #fff;
+    color: black;
+    border: 1px solid #000;
+    text-align: center;
+    user-select: none;
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+.story header{
+    background: #2980b9;
+    color: white;
+    font-weight: 800;
+    padding: 5px;
+    overflow: auto;
+}
+
+.story header span{
+    display: inline;
+}
+
+.story header .story-id{
+    float: left;
+}
+
+.story header button{
+    background: none;
+    color: white;
+    float: right;
+    cursor: pointer;
+}
+
+.story span{
+    display: block;
+}
+
+.story-name{
+    
+}
+.story-desc{
+    padding: 10px;
+}
+.story-est{
+    text-align: left;
+    padding: 1px 5px;
+}
+
+.story-comment-container{
+    width: 300px;
+    height: auto;
+    max-height: 80vh;
+    background: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.story button{
+    font-size: 18px;
+    border: none;
+    background:none;
+    cursor: pointer;
+}
+
+.story button.left
+{
+    float: left;
+}
+.story button.right{
+    float: right;
+}
+
+
+
+
+
+
+#story-model{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.4);
+}
+
+#add-story-model{
+    background: #fefefe;
+    color: #000;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    min-width: 250px;
+    width: 30%;
+    text-align: center;
+    
+}
+#add-story-model *{
+    margin: 10px auto;
+    width: 100%;
+}
+
+#add-story-model textarea{
+    height: 80px;
+}
+
+#add-story-model span{
+    display: block;
+}
+#add-story-model select{
+    display: block;
+}

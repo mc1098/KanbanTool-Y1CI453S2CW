@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CI453 Kanban (Read Only)</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link rel=stylesheet href="style.css">
+    <script type=text/jscript src="index.js"></script>
+</head>
+
+<body>
+    
+    <!-- TEMPLATE ELEMENTS -->
+    <div class="templates">
+    <div class="story" data-story="">
+        <header>
+            <span class="story-id"></span>
+            <span class="story-name"></span>
+            <button class="delete-story-btn"><i class="fas fa-trash"></i></button>
+            <button class="story-comment"><i class="fas fa-sticky-note"></i></button>
+        </header>
+    <span class="story-desc"></span>
+    <div class="story-comment-container"></div>
+    <span class="story-est"></span>
+    <button class="left"><i class="fas fa-arrow-left"></i></button>
+    <button class="right"><i class="fas fa-arrow-right"></i></button>
+    </div>
+    </div>
+    <!-- END OF TEMPLATES -->
+    
+    <form id="login" onsubmit="event.preventDefault();">
+        <label for="user">Username:</label>
+        <input name="user" type="text">
+        <label for="pass">Password:</label>
+        <input name="pass" type="password">
+        <button id="login-submit">Submit</button>
+    </form>
+    
+    <div id="story-model">
+    <div id="add-story-model">
+        <span>Story Name:</span>
+        <input id="story-name-input" type="text">
+        <span>Story Description:</span>
+        <textarea id="story-desc-input"></textarea>
+        <span>Story Est Time:</span>
+        <select id="story-est-input">
+        <option value="1 Hour">1 Hour</option>
+        <option value="2 Hours">2 Hours</option>
+        <option value="4 Hours">4 Hours</option>
+        <option value="8 Hours">8 Hours</option>
+        <option value="2 Days">2 Days</option>
+        <option value="3 Days">3 Days</option>
+        <option value="5 Days">5 Days</option>
+        <option value="10 Days">10 Days</option>
+        </select>
+        <button id="story-model-accept">Confirm</button>
+    </div>
+    </div>
+    
+    <header>
+    <h1>CI453 Kanban</h1>
+    </header>
+    
+    <div id="kanban-board">
+        <div class="col-header">Backlog 
+            <button id="add-story-btn"><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="col-header">New</div>
+        <div class="col-header">In Progress [4]</div>
+        <div class="col-header">Testing [3]</div>
+        <div class="col-header">Complete</div>
+        <div class="workflow-column backlog">
+            
+<!-- testing 
+            <div class="story">
+        <header>
+            <span class="story-id">1</span>
+            <span class="story-name"></span>
+            <button class="edit"><i class="fas fa-trash"></i></button>
+            <button class="story-comment"><i class="fas fa-sticky-note"></i></button>
+        </header>
+    <span class="story-desc"></span>
+    <div class="story-comment-container">28/03/2019 - Added to backlog</div>
+    <span class="story-est"></span>
+    <button class="left"><i class="fas fa-arrow-left"></i></button>
+    <button class="right"><i class="fas fa-arrow-right"></i></button>
+    </div>
+-->
+            
+        </div>
+        <div class="workflow-column new"></div>
+        <div class="workflow-column progress" data-wip=4></div>
+        <div class="workflow-column testing" data-wip=3></div>
+        <div class="workflow-column complete"></div>
+        
+        
+        
+    </div>
+    
+    
+</body>
+
+    
+</html>
